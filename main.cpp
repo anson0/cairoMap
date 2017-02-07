@@ -9,7 +9,7 @@
 #include <math.h>
 #define M_PI 3.1415926
 #define EARTH_RADIUS  6378.137
-#define RANGE          50000
+#define RANGE          5000
 #define pi 3.14159265358979323846
 #define earthRadiusKm 6371000
 using namespace std;
