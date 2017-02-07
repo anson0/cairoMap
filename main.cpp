@@ -1139,7 +1139,7 @@ bool beginDrawBar(latLonScope& scope)
     list<node> q0,q1,lstEnds;
     auto lstNode=hashNodes[0];
     node nodeStart=*(lstNode.begin());
-    uint64_t idStartDrawNode=301638556;//shanghai:301638556;//songJiang:1439718308;
+    uint64_t idStartDrawNode=301638556;//shanghai peopele square:301638556;
    bool bFlag=getEndNodes(idStartDrawNode,q1,lstEnds);//songJiang nodeStart.id getEndNodes getEndNodesgetEndNodes
     //updateScope(lstEnds,idStartDrawNode,scope);
     cairo_surface_t *surface;
