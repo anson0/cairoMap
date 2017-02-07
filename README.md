@@ -11,6 +11,8 @@ I made this project because,i was fascinated by the project "dijkstra-cartograph
 There is huge computation involved in such project,nodejs is too inefficient in dealing with much computation,it will took several days for a computer to finish,i was never making that far,because my computer won't tolerate continuously working that run .So I finanly decided to write a c++ project,in order to get the fascinated images .
 
 #**recipe**:
-*[OSM FILE](http://download.geofabrik.de/asia/china.html) 
-*Extracted shanghai.osm with [osmconvert](http://wiki.openstreetmap.org/wiki/Osmconvert), and polygon file.To get polygon file please refer [polygon](https://github.com/JamesChevalier/cities).
+-[OSM FILE](http://download.geofabrik.de/asia/china.html).
+
+-Extracted shanghai.osm with [osmconvert](http://wiki.openstreetmap.org/wiki/Osmconvert), and polygon file.To get polygon file please refer [polygon](https://github.com/JamesChevalier/cities).
+
 `osmconvert china-latest.osm.pbf -B=Shanghai.poly -o=shanghai.osm`
