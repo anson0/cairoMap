@@ -208,56 +208,8 @@ static gboolean on_draw(GtkWidget *widget,gpointer pData)
         }
     }
 
-//    list<node> q0,q1,lstEnds;
-//    auto lstNode=hashNodes[0];
-//    node nodeStart=*(lstNode.begin());
-//
-//        cairo_set_source_rgb(cr,1,1,1);
-//
-//    cairo_fill(cr);
-//    cairo_set_line_width(cr,1);
-//    bool bFlag=getEndNodes(1439718308,q0,q1,lstEnds);//nodeStart.id
-//    for (auto it=lstEnds.begin();it!=lstEnds.end();it++)
-//    {
-//        node nd=*it;
-//        pointPixel pt1;//=getCoordinate(hashNodes,nd.id);
-//         pt1=transformCoordinate(hashNodes,nd.id,scope);
-//            double radius1=0;
-//            double raduis2=360.0*(M_PI/180.0);
-//           // cairo_set_source_rgba (cr, 1, 0, 0, 0.80);
-//            //cairo_arc(cr,pt1.x,pt1.y,2,radius1,raduis2);
-//            cairo_set_source_rgb(cr, 0,0,0);
-//            cairo_move_to(cr,pt1.x,pt1.y);
-//            //cairo_set_source_rgba (cr, 0, 1.0, 0, 1.0);
-//            //cairo_stroke(cr);
-//        while(nd.idPrev!=0)
-//        {
-//            cairo_set_source_rgb(cr, 0,0,0);
-//            pointPixel pt2;//=getCoordinate(hashNodes,nd.idPrev);
-//            pt2=transformCoordinate(hNodes,nd.idPrev,areaScope);
-//            cairo_line_to(cr,pt2.x,pt2.y);
-//            pt1=pt2;
-//           cairo_move_to(cr,pt1.x,pt1.y);
-//            //node nd;
-//            if(!getNode(nd.idPrev,nd))
-//                break;
-//
-//
-//            cairo_stroke(cr);
-//        }
-//    }
+
         ///////////////////////////
-
-
-
-
-//    cairo_move_to(cr,450.8,900);
-//    cairo_line_to(cr,300,300);
-//    cairo_line_to(cr,303,500);
-////cairo_stroke(cr);
-//
-//    cairo_move_to(cr,100,700);
-//    cairo_line_to(cr,200,800);
 
     funcLogTime(t);
     cairo_stroke(cr);
@@ -321,23 +273,7 @@ int main()
 
     vecQ0.resize(PRIME_HASH_SIZE);
     ifstream in("shanghai.osm");
-//    node nTempBar;
-//    nTempBar.id=3;
-//    nTempBar.lat=10;
-//    nTempBar.lon=100;
-//    list<int> lst{1,2,3};
-//    for(auto it=lst.begin();it!=lst.end();it++)
-//    {
-//        int iTemp=*it;
-//    }
-//    list<node> lstWatchBar{nTempBar};
-//    //lstWatchBar.push_back(nTemp);
-//    list<node>& lstWatch=hashNodes[nTempBar.id%SIZEHASH];
-//    lstWatch.push_back(nTempBar);
-//    list<node> lstTempWatch=hashNodes[nTempBar.id%SIZEHASH];
-//    lstWatch.push_back(nTempBar);
-//    node nWatch=*lstWatch.begin();
-    //latLonScope scope;
+
     if(!in.good())
     {
         cout<<"fail to open file"<<endl;
@@ -354,9 +290,7 @@ int main()
     cout<<"Done"<<endl;
     //std::vector<node>vecNodes;
     string strRead;
-    string strBlockLeftOver{};
-   // strRead.assign(deqRead.begin(),deqRead.end());
-    //deqRead.clear();
+    string strBlockLeftOver{};  
 
     int nLeftOverInBlock=0;
     int iLoopLog=0;
@@ -373,12 +307,7 @@ int main()
     int nAdvance;
     uint64_t uTotalCount=deqRead.size();
     //////////////
-//    auto itTemp=deqRead.begin();
-//    advance(itTemp,297400000);
-//    ofstream os("acai.txt");
-//    ostream_iterator <char> out_it(os);
-//    copy(itTemp,deqRead.end(),out_it);
-//    os.close();
+
 
 
     /////////////////////////
@@ -387,19 +316,7 @@ int main()
 
 
 
-//        if(iLoopLog%20==0&&iLoopLog>1)
-//        {
-//
-//            int i=0;
-//        }
-//         if(iLoopLog%500==0)
-//        {
-//            int i=0;
-//        }
-//         if(iLoopLog%10000==0)
-//        {
-//            int i=0;
-//        }
+
 
         strRead.clear();
         auto itTemp=itDeque;
@@ -409,17 +326,13 @@ int main()
         uCountLog+=nAdvance;
         int nSizeStrRead=nLeftOverInBlock+nAdvance;
         strRead.resize(nSizeStrRead);
-        //copy(strBlockLeftOver.begin(),strBlockLeftOver.end(),back_inserter(strRead));
-        //strRead.insert(strRead.begin(),strBlockLeftOver.begin(),strBlockLeftOver.end());
         for(auto it=strRead.begin(),itBar=strBlockLeftOver.begin();it!=strRead.end()&&itBar!=strBlockLeftOver.end();it++,itBar++)
         {
             *it=*itBar;
         }
-        //nAdvance=min(nToEnd,BUFSIZ);
-        //uCountLog+=nAdvance;
+       
         advance(itDeque,nAdvance);
-        //copy(itTemp,itDeque,std::back_inserter(strRead));
-        //strRead.insert(strRead.begin()+nLeftOverInBlock,itTemp,itDeque);
+     
         for(auto it=strRead.begin()+nLeftOverInBlock;it!=strRead.end()&&itTemp!=itDeque;it++,itTemp++)
         {
             *it=*itTemp;
@@ -449,16 +362,7 @@ int main()
                 break;
         }
 
-        //int nSizeStrRead=strBlockLeftOver
-        //strRead.assign(itDeque,);
-       // int nWatch2=strRead.size();
-        //cout<<strRead<<endl;
-        //////////////////
-//        list<node> lst;
-//        for(auto itWatchHashNode=hashNodes.begin();itWatchHashNode!=hashNodes.end();itWatchHashNode++)
-//        {
-//             lst=*itWatchHashNode;
-//        }
+
         //////////////////
         if(bNode==true)
         {
@@ -508,15 +412,7 @@ int main()
             if(bWay==true)
             {
                 bNode=false;
-//                 list<uint64_t> lstId;
-//           getNodesInEachWay(strRead,lstId);
-//           if(checkListHasInt(140737353975056,lstId))
-//           {
-//               cout<<"extract the wrong id"<<endl;
-//
-//           }
-           //improveListOfId(lstId);
-          // addEdgeFromList(lstId);
+
                 //pass string to read way
                 for(std::sregex_token_iterator it(strRead.begin()+nDifferFromBegin,strRead.end(),expressionWay,0); it!=finistNull; it++)
                 {
@@ -542,16 +438,7 @@ int main()
         else
            {
 
-//           list<uint64_t> lstId;
-//
-//           getNodesInEachWay(strRead,lstId);
-//           if(checkListHasInt(140737353975056,lstId))
-//           {
-//               cout<<"extract the wrong id"<<endl;
-//
-//           }
-//           //improveListOfId(lstId);
-//           addEdgeFromList(lstId);
+
             //pass string to read way
             deque<char> strTemp;
             strTemp.resize(strRead.size());
@@ -597,48 +484,7 @@ int main()
                 itIndex2=search(itIndex1Trailing,strTemp.end(),varIndex2.begin(),varIndex2.end());
 
             }
-//            for(std::sregex_token_iterator it(strRead.begin(),strRead.end(),expressionWay,0); it!=finistNull; it++)
-//            string strTemp2;
-//            strTemp2.resize(strTemp.size());
-//            auto itBarDeque=strTemp.begin();
-//            for(auto it=strTemp2.begin();it!=strTemp2.end();)
-//            {
-//                *it++=*itBarDeque++;
-//            }
-//            for(std::sregex_token_iterator it(strTemp2.begin(),strTemp2.end(),expressionWay,0); it!=finistNull; it++)
-//            {
-//                cout<<(*it).str().c_str()<<endl;
-//                string strBar=(*it).str();
-//                list<uint64_t> lstTemp;
-//                for(std::sregex_token_iterator itExtract(strBar.begin(),strBar.end(),extractWay,1); itExtract!=finistNull; itExtract++)
-//                {
-//                    auto sWatch=(*itExtract).str();
-//                    uint64_t var=atoi((*itExtract).str().c_str());
-//                    lstTemp.push_back(var);
-//
-//
-//                }
-//
-//                for(auto itBar=lstTemp.begin(); itBar!=lstTemp.end();)
-//                {
-//                    uint64_t id1=*itBar;
-//                    itBar++;
-//                    uint64_t id2;
-//                    if(itBar!=lstTemp.end())
-//                    {
-//                        id2=*itBar;
-//                        addEdge(id1,id2,hashWays,hashNodes);
-//
-//                    }
-//                    else
-//                    {
-//
-//                        break;
-//
-//                    }
-//
-//                }
-//            }
+
 
         }
         auto itLeftOver=getLeftOverFromBlock(strRead,nSizeStrRead);
@@ -649,23 +495,7 @@ int main()
 
 
 
-//    for(auto it=hashWays.begin();it!=hashWays.end();it++)
-//    {
-//        auto var=*it;
-//        for(auto itSub=var.begin();itSub!=var.end();itSub++)
-//        {
-//            auto var2=*itSub;
-//            cout<<"Head node is"<<var2.id<<"    ";
-//            for(auto it3=var2.lstNodes.begin();it3!=var2.lstNodes.end();it3++)
-//            {
-//                cout<<*it3<<"     ";
-//
-//            }
-//            cout<<endl;
-//
-//        }
-//
-//    }
+
 
      cout<<"put into container takes "<<t.elapsed()<<endl;
 
@@ -707,15 +537,7 @@ int main()
 
     gtk_main();
 
-////////////////////////////////////////////////
-//    for(auto it=vecNodes.begin(); it!=vecNodes.end(); it++)
-//    {
-//        node nodeTemp=*it;
-//        cout<<"id="<<nodeTemp.id<<",latitude="<<nodeTemp.lat<<",longitude="<<nodeTemp.lon<<endl;
-//    }
-//
 
-    //cout << "Hello world!" << endl;
     return 0;
 }
 
@@ -734,15 +556,7 @@ void addEdge(uint64_t id1,uint64_t id2,vector<list<wayNodes>>& ways,vector<list<
        if((*itNode).id==id1)
          {
              itNode->bHasWay=true;
-//             if(itNode->lat<minLat)
-//                minLat=itNode->lat;
-//            else
-//                if(itNode->lat>maxLat)
-//                   maxLat=itNode->maxLat;
-//             if(itNode->lon<minLon)
-//                minLon=itNode->lon;
-//             else if(itNode->lat>maxLon)
-//                     maxLon=itNode->lon;
+
              break;
 
          }
@@ -939,18 +753,7 @@ double rad(double d)
    return M_PI / 180.0;
 }
 
-//double GetDistance(double lat1, double lng1, double lat2, double lng2)
-//{
-//   double radLat1 = rad(lat1);
-//   double radLat2 = rad(lat2);
-//   double a = radLat1 - radLat2;
-//   double b = rad(lng1) - rad(lng2);
-//   double s = 2 * asin(sqrt(pow(sin(a/2),2) +
-//    cos(radLat1)*cos(radLat2)*pow(sin(b/2),2)));
-//   s = s * EARTH_RADIUS;
-//   s = round(s * 1000) ;
-//   return s;
-//}
+
 bool getNode(uint64_t id,node& nd)
 {
     bool bFlag=false;
@@ -993,17 +796,7 @@ bool updateDistanceAndPreviousNodes(node nd,double distDecreaase,list<node>&q1,l
     list<node> lstNodeChange;
     for(auto it=lstConn.begin();it!=lstConn.end();it++)
     {
-//        for(auto it2=q0.begin();it2!=q0.end();it2++)
-//        {
-//            node& var=*it2;
-//            if(var.id==(*it)&&var.idPrev==nd.id)
-//            {
-//                var.distance-=(distDecreaase);
-//                lstNodeChange.push_back(var);
-//                break;
-//            }
-//
-//        }
+
         bool bFetch;
         node& nodeFetchedFromeQ0=fetchNodeFromQ0(nd.id,bFetch);
 
@@ -1102,15 +895,7 @@ bool updateListEnds(node nd,list<node>&q1,list<node>&lstEnds)
                     continue;
                 }
                 q1.push_back(nodeConn);
-//                list<uint64_t>lstConnNew;
-//                getListWayNodes(nodeConn.id,lstConnNew);
-//                for(auto itConnNew=lstConnNew.begin();itConnNew!=lstConnNew.end();itConnNew++)
-//                {
-//                    node nodeTemp;
-//                    if(!getNode(*itConnNew,nodeTemp))
-//                        return false;
-//                    q1.push_back(nodeTemp);
-//                }
+
             }
         }
         return true;
@@ -1127,16 +912,7 @@ bool updateDistanceAndPreviousNodes2(list<node>lstChange,double distDecreaase,li
         return false;
     for(auto it=lstConn.begin();it!=lstConn.end();it++)
     {
-//        for(auto it2=q0.begin();it2!=q0.end();it2++)
-//        {
-//            node& var=*it2;
-//            if(var.id==(*it)&&var.idPrev==nd.id)
-//            {
-//                var.distance-=(distDecreaase);
-//                break;
-//            }
-//
-//        }
+
         bool bFetch;
         node& nodeFetch=fetchNodeFromQ0(nd.id,bFetch);
         if(bFetch)
@@ -1238,17 +1014,6 @@ bool getEndNodes(int idStart,list<node>& q1,list<node>&lstEnds)
             bFlag3=false;
             ///////////check to see if q0 contains it
 
-//            auto itq0=q0.begin();
-//            for(;itq0!=q0.end();itq0++)
-//            {
-//                node& nodeQ0=*itq0;
-//                if(nodeQ0.id==idConn)
-//                {
-//                    bFlag3=true;
-//                    distInQ0=nodeQ0.distance;
-//                    break;
-//                }
-//            }
 
             node& nodeFetched=fetchNodeFromQ0(idConn,bFlag3);
             //bFlag3=fetchNodeFromQ0(idConn,nodeFetched);
@@ -1294,16 +1059,7 @@ bool getEndNodes(int idStart,list<node>& q1,list<node>&lstEnds)
                     continue;
                 }
                 q1.push_back(nodeConn);
-//                list<uint64_t>lstConnNew;
-//                getListWayNodes(nodeConn.id,lstConnNew);
-//                for(auto itConnNew=lstConnNew.begin();itConnNew!=lstConnNew.end();itConnNew++)
-//                {
-//                    node nodeTemp;
-//                    if(!getNode(*itConnNew,nodeTemp))
-//                        return false;
-//                    if(!searchInQ0(nodeTemp.id,q0))
-//                       q1.push_back(nodeTemp);
-//                }
+
             }
         }
     }
@@ -1341,15 +1097,7 @@ double rad2deg(double rad) {
   return (rad * 180 / pi);
 }
 
-/**
- * Returns the distance between two points on the Earth.
- * Direct translation from http://en.wikipedia.org/wiki/Haversine_formula
- * @param lat1d Latitude of the first point in degrees
- * @param lon1d Longitude of the first point in degrees
- * @param lat2d Latitude of the second point in degrees
- * @param lon2d Longitude of the second point in degrees
- * @return The distance between the two points in kilometers
- */
+
 double distanceEarth(double lat1d, double lon1d, double lat2d, double lon2d) {
   double lat1r, lon1r, lat2r, lon2r, u, v;
   lat1r = deg2rad(lat1d);
@@ -1463,22 +1211,13 @@ bool beginDrawBar(latLonScope& scope)
         }
     }
     ////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////
-//     list<node> q0,q1,lstEnds;
-//    auto lstNode=hashNodes[0];
-//    node nodeStart=*(lstNode.begin());
-//    uint64_t idStartDrawNode=1439718308;//shanghai:301638556;//songJiang:1439718308;
-//   bool bFlag=getEndNodes(idStartDrawNode,q1,lstEnds);//songJiang nodeStart.id getEndNodes getEndNodesgetEndNodes
-   // bool bFlag=getEndNodes(301638556,q1,lstEnds);//301638556（shanghai人民广场）
+    
     for (auto it=lstEnds.begin();it!=lstEnds.end();it++)
     {
         node nd=*it;
         nd.idPrev=(*it).idPrev;
         pointPixel pt1;//=getCoordinate(hashNodes,nd.id);
-         //pt1=transformCoordinate(hashNodes,nd.id,scope);
-
-        //cairo_set_source_rgb(cr, 0,0,0);
-        //cairo_set_line_width (cr, 1);
+       
         list<uint64_t> lstLineNodes;
         getLineToStartNode(nd.id,idStartDrawNode,lstLineNodes);
         //drawFromListIds(cr,lstLineNodes);
@@ -1628,27 +1367,7 @@ bool beginDraw(latLonScope& scope)
                     }
 
             }
-            //node nd;
-
-//            node& ndTemp=fetchNodeFromQ0(nd.idPrev,bFetch);
-//            nd=ndTemp;
-//            node nodeNoUse;
-//            if(!getNode(ndTemp.id,nodeNoUse))
-//            {
-//                continue;
-//            }
-//            if(!getNode(nd.idPrev,nd))
-//                {
-//                    bool bFetch;
-//                   // node& ndTemp=
-//                    node ndTemp=fetchNodeFromQ0(nd.idPrev,bFetch);
-//                    if(nd.idPrev==0)
-//                        break;
-//                    else
-//                        {
-//                          continue;
-//                        }
-//                }
+          
 
 
 
@@ -1674,54 +1393,7 @@ bool beginDraw(latLonScope& scope)
                     cairo_line_to(cr,pt2.x,pt2.y);
                     cairo_stroke(cr);
 
-//                    if(bMoveAlready)
-//                    {
-//                        node ndNoUse;
-//                        bNodeExits=getNode(nd.id,ndNoUse);
-//                        if(bNodeExits==true)
-//                        {
-//                            pt2=transformCoordinate(hashNodes,nd.id,scope);
-//                            //cairo_set_source_rgb(cr, 0,0,0);
-//                            //cairo_set_line_width (cr, 1);
-//                            cairo_line_to(cr,pt2.x,pt2.y);
-//                            cairo_move_to(cr,pt2.x,pt2.y);
-//                            cairo_stroke(cr);
-//                        }
-//
-//                        bool bFetch;
-//                        //node& ndTemp=fetchNodeFromQ0(nd.idPrev,bFetch);
-//                        pt2=transformCoordinate(hashNodes,idStartDrawNode,scope);
-//                            cairo_line_to(cr,pt2.x,pt2.y);
-//                            cairo_stroke(cr);
-//
-//
-//                    }
-//                    else
-//                    {
-//                        node ndNoUse;
-//                        bNodeExits=getNode(nd.id,ndNoUse);
-//                        if(bNodeExits==true)
-//                        {
-//                            pt2=transformCoordinate(hashNodes,nd.id,scope);
-//                            //cairo_line_to(cr,pt2.x,pt2.y);
-//                            //cairo_set_source_rgb(cr, 0,0,0);
-//                            //cairo_set_line_width (cr, 1);
-//                            cairo_move_to(cr,pt2.x,pt2.y);
-//                            pt2=transformCoordinate(hashNodes,idStartDrawNode,scope);
-//                            cairo_line_to(cr,pt2.x,pt2.y);
-//                            cairo_stroke(cr);
-//
-//                        }
-//                        else
-//                        {
-//                            //cairo_set_source_rgb(cr, 0,0,0);
-//                            //cairo_set_line_width (cr, 1);
-//                            pt2=transformCoordinate(hashNodes,idStartDrawNode,scope);
-//                            cairo_move_to(cr,pt2.x,pt2.y);
-//                            cairo_stroke(cr);
-//                        }
-//
-//                    }
+
 
     }
     cairo_surface_write_to_png(surface, "image.png");
@@ -1844,106 +1516,7 @@ void drawMap(latLonScope& scope)
     }
      cairo_surface_write_to_png(surface, "imageMap.png");
 }
-//bool getNodesInEachWay(string& strRead,list<uint64_t>& lstIds)
-//{
-//    lstIds.clear();
-//    bool bFlagWayStart=false;
-//    deque<char> strTemp;
-//    strTemp.resize(strRead.size());
-//    auto itBar=strRead.begin();
-//    for(auto it=strTemp.begin();it!=strTemp.end();)
-//    {
-//        *it++=*itBar++;
-//    }
-//    string varIndex1="<way";
-//    string varIndex2="</way>";
-//    auto itWayBegin=search(strTemp.begin(),strTemp.end(),varIndex1.begin(),varIndex1.end());
-//    auto itWayEnd=search(strTemp.begin(),strTemp.end(),varIndex2.begin(),varIndex2.end());
-//    if(itWayBegin==strTemp.end())
-//        return false;
-//    if(itWayEnd==strTemp.end())
-//        return false;
-//    while(itWayBegin!=strTemp.end()&&itWayEnd!=strTemp.end())
-//    {
-//
-//
-//    bFlagWayStart=true;
-//    string strNodeBegin="<nd";
-//    auto itNodeBegin=search(itWayBegin,itWayEnd,strNodeBegin.begin(),strNodeBegin.end());
-//    string strLineEnd="\n";
-//    auto itStrLineEnd=search(itNodeBegin,itWayEnd,strLineEnd.begin(),strLineEnd.end());
-//    string strNodeId;
-//    if(itStrLineEnd!=itWayEnd)
-//    {
-//        auto itFirstQuote=find(itNodeBegin,itStrLineEnd,'"');
-//        auto itSecondQuote=find(++itFirstQuote,itStrLineEnd,'"');
-//        if(itFirstQuote!=itStrLineEnd&&itSecondQuote!=itStrLineEnd)
-//        {
-//            //advance(itFirstQuote,1);
-//            int iLength=itSecondQuote-itFirstQuote;
-//            int iInit=0;
-//            for(auto itAssign=itFirstQuote;itAssign!=itSecondQuote;itAssign++)
-//            {
-//                strNodeId.push_back(*itAssign);
-//            }
-//            //strNodeId.assign(itFirstQuote,itSecondQuote);
-//            stringstream sstream(strNodeId);
-//            uint64_t id;
-//            sstream>>id;
-//            lstIds.push_back(id);
-//
-//
-//        }
-//        else
-//        {
-//            cout<<"there is no id between 2 quotes!"<<endl;
-//            return false;
-//        }
-//    }
-//
-//    itNodeBegin=search(itStrLineEnd,itWayEnd,strNodeBegin.begin(),strNodeBegin.end());
-//    itStrLineEnd=search(itNodeBegin,itWayEnd,strLineEnd.begin(),strLineEnd.end());
-//    while(itNodeBegin!=itWayEnd&&itStrLineEnd!=itWayEnd)
-//    {
-//        auto itFirstQuote=find(itNodeBegin,itStrLineEnd,'"');
-//        auto itSecondQuote=find(++itFirstQuote,itStrLineEnd,'"');
-//        if(itFirstQuote!=itStrLineEnd&&itSecondQuote!=itStrLineEnd)
-//        {
-//            strNodeId.assign(itFirstQuote,itSecondQuote);
-//            stringstream sstream(strNodeId);
-//            uint64_t id;
-//            sstream>>id;
-//            lstIds.push_back(id);
-//
-//
-//        }
-//        else
-//        {
-//            cout<<"there is no id between 2 quotes!"<<endl;
-//            return false;
-//        }
-//        ///update advance///
-//        itNodeBegin=search(itStrLineEnd,itWayEnd,strNodeBegin.begin(),strNodeBegin.end());
-//        itStrLineEnd=search(itNodeBegin,itWayEnd,strLineEnd.begin(),strLineEnd.end());
-//
-//    }
-//
-//    itWayBegin=search(itWayEnd,strTemp.end(),varIndex1.begin(),varIndex1.end());
-//
-//    if(itWayBegin==strTemp.end())
-//        break;
-//    itWayEnd=search(itWayBegin,strTemp.end(),varIndex2.begin(),varIndex2.end());
-//    if(itWayEnd==strTemp.end())
-//        break;
-//    }
-//
-//    if(itWayBegin==strTemp.end())
-//    {
-//
-//    }
-//    //auto varIndex1Trailing=">";
-//
-//}
+
 bool checkListHasInt(int64_t id,list<uint64_t>&lst)
 {
     for(auto it=lst.begin();it!=lst.end();it++)
